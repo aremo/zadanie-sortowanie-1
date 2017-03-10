@@ -1,6 +1,6 @@
 package pl.javastart.exercise.sorting;
 
-public class Human {
+public class Human implements Comparable<Human> {
 
     private Long id;
     private String name;
@@ -22,5 +22,9 @@ public class Human {
 
     public String getSurname() {
         return surname;
+    }
+
+    @Override public int compareTo(Human o) {
+        return name.compareTo(o.name);
     }
 }
